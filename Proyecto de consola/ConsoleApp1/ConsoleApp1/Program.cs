@@ -15,8 +15,11 @@ namespace ConsoleApp1
             Console.WriteLine("Presiona 1: Aplicacion para saber si te deben o debes dinero");
             Console.WriteLine("Presiona 2: Aplicacion para saber el promedio de alumnos");
 
-            if (Console.ReadLine() == "1")
+            int opciones = 2;
+            opciones = int.Parse(Console.ReadLine());
+            switch (opciones)
             {
+                case 1:
 
                 Console.Write("programa utilizado para deducir cuanto dinero se tiene disponible, cuanto dinero se debe y cuanto dinero le deben");
                 Console.ReadLine();
@@ -69,27 +72,32 @@ namespace ConsoleApp1
 
 
 
-                }
-                 
+                } break;
+                case 2:
+                    Console.WriteLine("Calculo de promedio grupal ITSM");
+                    int i;
+                    int Snotas=0;
+                    double promN;
+                    int[] Notas = { 12, 16, 14, 19, 11 };
+                    string[] Alumnos = { "Hugo", "Paco", "Luis", "Eliza", "Alondra" };
+                    for (i = 0; i < Notas.Length; i++)
+                    {
+                        Snotas = Snotas + Notas[i];
+                    }
+                    promN = Snotas / Notas.Length;
+                    Console.WriteLine("----------------");
+                    Console.WriteLine("La suma de todas las notas es={0}", Snotas);
+                    Console.WriteLine("El promedio de todas las notas es={0}", promN);
+                    Console.ReadLine();
+                    break;
+                default:
+                    Console.WriteLine("Opcion no valida");
+                    break;
             }
-            else if (Console.ReadLine() == "2")
-            {
-                Console.WriteLine("Calculo de promedio grupal ITSM");
-                int i;
-                int Snotas = 0;
-                double promN;
-                int[] Notas = { 12, 16, 14, 19, 11 };
-                string[] Alumnos = { "Hugo", "Paco", "Luis", "Eliza", "Alondra" };
-                for (i = 0; 1 < Notas.Length; i++)
-                {
-                    Snotas = Snotas + Notas[i];
-                }
-                promN = Snotas / Notas.Length;
-                Console.WriteLine("----------------");
-                Console.WriteLine("La suma de todas las notas es={0}", Snotas);
-                Console.WriteLine("El promedio de todas las notas es={0}", promN);
-                Console.ReadLine();
-            }
+
+           
+         
+
 
         }
     }
